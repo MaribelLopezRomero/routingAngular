@@ -1,0 +1,54 @@
+<p>actualiza-query-params works!</p>
+<p>proyectos works!</p>
+
+<form action="" class="form-group row">
+  <label for="nombre">Nombre</label>
+  <input
+    type="text"
+    name="nombre"
+    id="nombre"
+    placeholder="nombre"
+    class="form-control"
+    [(ngModel)]="cuadroNombre"
+  />
+  <label for="apellido">Apellido</label>
+  <input
+    type="text"
+    name="apellido"
+    id="apellido"
+    placeholder="apellido"
+    class="form-control"
+    [(ngModel)]="cuadroApellido"
+  />
+
+  <label for="cargo">Cargo</label>
+  <input
+    type="text"
+    name="cargo"
+    id="cargo"
+    placeholder="cargo"
+    class="form-control"
+    [(ngModel)]="cuadroCargo"
+  />
+
+  <label for="salario">Salario</label>
+  <input
+    type="number"
+    name="salario"
+    id="salario"
+    placeholder="salario"
+    class="form-control"
+    [(ngModel)]="cuadroSalario"
+  />
+
+  <input
+    type="submit"
+    class="btn btn-primary"
+    (click)="actualizaEmpleado()"
+    [value]="accion"
+  />
+</form>
+
+<div style="text-align: center">
+  <button class="btn btn-primary" (click)="volverHome()">HOME</button>
+</div>

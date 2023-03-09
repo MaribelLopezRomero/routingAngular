@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="col">
+    <h1>{{ titulo }}</h1>
+  </div>
+  <form action="" class="form-group row">
+    <label for="nombre">Nombre</label>
+    <input
+      type="text"
+      name="nombre"
+      id="nombre"
+      placeholder="nombre"
+      class="form-control"
+      [(ngModel)]="cuadroNombre"
+    />
+    <label for="apellido">Apellido</label>
+    <input
+      type="text"
+      name="apellido"
+      id="apellido"
+      placeholder="apellido"
+      class="form-control"
+      [(ngModel)]="cuadroApellido"
+    />
+
+    <label for="cargo">Cargo</label>
+    <input
+      type="text"
+      name="cargo"
+      id="cargo"
+      placeholder="cargo"
+      class="form-control"
+      [(ngModel)]="cuadroCargo"
+    />
+
+    <label for="salario">Salario</label>
+    <input
+      type="number"
+      name="salario"
+      id="salario"
+      placeholder="salario"
+      class="form-control"
+      [(ngModel)]="cuadroSalario"
+    />
+
+    <button type="submit" class="btn btn-primary" (click)="anadirEmpleado()">
+      Añadir
+    </button>
+  </form>
+</div>
+
+<br /><br />
+
+<!-- Voy a pasar esto a un componente hijo -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let empleado of empleados; let i = index">
+        {{ i + 1 }} {{ empleado.nombre }} {{ empleado.apellido }}
+        {{ empleado.cargo }} {{ empleado.salario }}
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<app-empleado-hijo
+  *ngFor="let empleado of empleados; let i = index"
+  [empleadoDeLista]="empleado"
+  [indice]="i"
+></app-empleado-hijo>
+
+<br />

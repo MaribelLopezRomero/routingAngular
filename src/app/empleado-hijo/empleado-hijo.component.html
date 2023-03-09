@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div>
+        <!-- añadir routing con parametro  -->
+        <a [routerLink]="['/actualiza', indice]">
+          {{ indice + 1 }} {{ empleadoDeLista.nombre }}
+          {{ empleadoDeLista.apellido }} {{ empleadoDeLista.cargo }}
+          {{ empleadoDeLista.salario }}
+        </a>
+
+        <!-- QUERYPARAMS -->
+
+        <button
+          [routerLink]="['/actualizaQ', indice]"
+          [queryParams]="{ accion: 'actualizar' }"
+          class="btn btn-primary"
+        >
+          Actualiza
+        </button>
+
+        &nbsp; &nbsp;
+
+        <button
+          [routerLink]="['/actualizaQ', indice]"
+          [queryParams]="{ accion: 'eliminar' }"
+          class="btn btn-primary"
+        >
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
